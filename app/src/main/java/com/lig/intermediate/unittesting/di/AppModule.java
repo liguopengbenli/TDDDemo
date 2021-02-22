@@ -39,7 +39,6 @@ public class AppModule {
     static NoteDao provideNoteDao(NoteDatabase noteDatabase){
         return noteDatabase.getNoteDao();
     }
-    
 
 
 
@@ -59,7 +58,5 @@ public class AppModule {
     static boolean example2(String string){
         return string.equals("guopeng inject a test2 string"); // it will return true because this string is as dependency inside the module
     }
-
-
 
 }
