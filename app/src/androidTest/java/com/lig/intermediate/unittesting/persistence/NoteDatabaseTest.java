@@ -3,6 +3,9 @@ package com.lig.intermediate.unittesting.persistence;
 import androidx.room.Room;
 import androidx.test.core.app.ApplicationProvider;
 
+import com.lig.intermediate.unittesting.model.Note;
+import com.lig.intermediate.unittesting.util.TestUtil;
+
 import org.junit.After;
 import org.junit.Before;
 
