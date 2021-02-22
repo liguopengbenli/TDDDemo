@@ -28,7 +28,10 @@ public interface AppComponent extends AndroidInjector<BaseApplication> {
 
     @Component.Builder
     interface Builder{
+
         // after @BindsInstance, it will be available in baseApplication
+        // Binding the application object with appcomponent, we can access it in all the module
+
         @BindsInstance
         Builder application(Application application);
 
