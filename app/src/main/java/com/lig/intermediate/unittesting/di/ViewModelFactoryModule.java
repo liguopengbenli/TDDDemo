@@ -6,10 +6,20 @@ import com.lig.intermediate.unittesting.viewmodels.ViewModelProviderFactory;
 
 import dagger.Binds;
 import dagger.Module;
+import dagger.Provides;
 
 @Module
-abstract class ViewModelFactoryModule {
+public abstract class ViewModelFactoryModule {
     @Binds
     public abstract ViewModelProvider.Factory bindViewModelFactory(ViewModelProviderFactory viewModelProviderFactory);
+
+    /* * same as
+
+      @Provides
+      static ViewModelProvider.Factory bindfactory(ViewModelProviderFactory factory){
+        return  factory;
+    }
+
+    * */
 
 }

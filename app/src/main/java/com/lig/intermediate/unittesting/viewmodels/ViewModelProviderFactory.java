@@ -9,6 +9,9 @@ import java.util.Map;
 import javax.inject.Inject;
 import javax.inject.Provider;
 
+/*
+* work around Known issue the viewModel DI
+* */
 
 public class ViewModelProviderFactory implements ViewModelProvider.Factory {
 
@@ -16,10 +19,12 @@ public class ViewModelProviderFactory implements ViewModelProvider.Factory {
 
     private final Map<Class<? extends ViewModel>, Provider<ViewModel>> creators;
 
+    // map key some class extend view model, value the provider of viewModel
     @Inject
     public ViewModelProviderFactory(Map<Class<? extends ViewModel>, Provider<ViewModel>> creators) {
         this.creators = creators;
     }
+
 
     @Override
     public <T extends ViewModel> T create(Class<T> modelClass) {

@@ -12,11 +12,14 @@ import dagger.android.ContributesAndroidInjector;
 */
 @Module
 public abstract class ActivityBuilderModule {
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector // we can add local scope module here
     abstract NotesListActivity contributeNotesListActivity();
 
+
+
+
     /*
-      // we can add here but keep organized we add in app module
+       we can add here but keep organized we add in AppModule
     @Provides
     static  String example1(){
         return "guopeng inject a test string";

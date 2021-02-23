@@ -44,6 +44,8 @@ public class AppModule {
     @Singleton
     @Provides
     static NoteRepository provideNoteRepository(NoteDao noteDao){
+        // noteDao here is available, because of provideNoteDao
+        // It checks every module to see if any dependency already there
         return new NoteRepository(noteDao);
     }
 

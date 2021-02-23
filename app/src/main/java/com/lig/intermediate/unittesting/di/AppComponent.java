@@ -12,8 +12,9 @@ import dagger.Component;
 import dagger.android.AndroidInjectionModule;
 import dagger.android.AndroidInjector;
 
-@Singleton //necessary because the dependency inside the module are marked Singleton
+@Singleton //necessary add @Singlethon because the dependency inside the module are marked Singleton
 @Component(
+        // all the modules add here have application scope, sometimes we need to limite scope
         modules = {
                 AndroidInjectionModule.class, // necessary for generating code
                 AppModule.class,

@@ -41,7 +41,6 @@ public class NoteRepository {
 
     public Flowable<Resource<Integer>> insertNote(final Note note) throws Exception{
         checkTitle(note);
-
         return noteDao.insertNote(note)
                 .delaySubscription(timeDelay, timeUnit)
                 .map(new Function<Long, Integer>() {
