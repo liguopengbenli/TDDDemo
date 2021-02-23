@@ -1,9 +1,8 @@
 package com.lig.intermediate.unittesting.di;
 
-import com.lig.intermediate.unittesting.NotesListActivity;
+import com.lig.intermediate.unittesting.ui.noteslist.NotesListActivity;
 
 import dagger.Module;
-import dagger.Provides;
 import dagger.android.ContributesAndroidInjector;
 
 

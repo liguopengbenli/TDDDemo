@@ -1,10 +1,11 @@
-package com.lig.intermediate.unittesting;
+package com.lig.intermediate.unittesting.ui.noteslist;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
 
+import com.lig.intermediate.unittesting.R;
 import com.lig.intermediate.unittesting.repository.NoteRepository;
 
 import javax.inject.Inject;
