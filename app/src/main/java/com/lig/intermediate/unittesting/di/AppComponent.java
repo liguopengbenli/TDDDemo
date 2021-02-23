@@ -4,12 +4,15 @@ import android.app.Application;
 
 import com.lig.intermediate.unittesting.BaseApplication;
 
+import javax.inject.Singleton;
+
 import dagger.Binds;
 import dagger.BindsInstance;
 import dagger.Component;
 import dagger.android.AndroidInjectionModule;
 import dagger.android.AndroidInjector;
 
+@Singleton //necessary because the dependency inside the module are marked Singleton
 @Component(
         modules = {
                 AndroidInjectionModule.class, // necessary for generating code

@@ -16,6 +16,8 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
+// This code is reusable for room testing
+
 public class NoteDaoTest extends NoteDatabaseTest {
 
     public static final String TEST_TITLE = "This is a test title"; // control + D -- copie ligne
