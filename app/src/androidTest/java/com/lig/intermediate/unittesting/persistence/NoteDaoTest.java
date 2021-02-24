@@ -26,7 +26,7 @@ public class NoteDaoTest extends NoteDatabaseTest {
     public static final String TEST_TIMESTAMP = "02-2021";
 
     @Rule
-    public InstantTaskExecutorRule rule = new InstantTaskExecutorRule(); // necessary config
+    public InstantTaskExecutorRule rule = new InstantTaskExecutorRule(); // necessary config for background thread test, here is Livedata
 
     /*
         Insert, Read, Delete
@@ -36,7 +36,7 @@ public class NoteDaoTest extends NoteDatabaseTest {
         Note note = new Note(TestUtil.TEST_NOTE_1);
 
         // insert
-        getNoteDao().insertNote(note).blockingGet();
+        getNoteDao().insertNote(note).blockingGet();  // wait until inserted
 
         //read
         LiveDataTestUtil<List<Note>> liveDataTestUtil = new LiveDataTestUtil<>();

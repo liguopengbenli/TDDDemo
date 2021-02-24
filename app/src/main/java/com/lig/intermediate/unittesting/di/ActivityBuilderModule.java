@@ -13,9 +13,7 @@ import dagger.android.ContributesAndroidInjector;
 @Module
 public abstract class ActivityBuilderModule {
     @ContributesAndroidInjector // we can add local scope module here
-    abstract NotesListActivity contributeNotesListActivity();
-
-
+    abstract NotesListActivity contributeNotesListActivity(); // This is declare as subComponent
 
 
     /*
