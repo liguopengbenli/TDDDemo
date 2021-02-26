@@ -13,7 +13,7 @@ import javax.inject.Inject;
 
 import static com.lig.intermediate.unittesting.repository.NoteRepository.NOTE_TITLE_NULL;
 
-public class noteViewModel extends ViewModel {
+public class NoteViewModel extends ViewModel {
     private static final String TAG = "NoteViewModel";
 
     // inject
@@ -23,7 +23,7 @@ public class noteViewModel extends ViewModel {
     private MutableLiveData<Note> note = new MutableLiveData<>();
 
     @Inject
-    public noteViewModel(NoteRepository noteRepository) {
+    public NoteViewModel(NoteRepository noteRepository) {
         this.noteRepository = noteRepository;
     }
 
@@ -36,7 +36,6 @@ public class noteViewModel extends ViewModel {
             );
     }
 
-    
     public LiveData<Note> observeNote(){
         return note;
     }
