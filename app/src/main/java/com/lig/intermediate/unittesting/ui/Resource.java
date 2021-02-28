@@ -6,6 +6,7 @@ import androidx.annotation.Nullable;
 /*
 * In the jetpack suggest,
 * to handle network fetch data states
+* Wrapper class
 *
 * */
 
