@@ -2,11 +2,13 @@ package com.lig.intermediate.unittesting.ui.noteslist;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
 import com.lig.intermediate.unittesting.R;
 import com.lig.intermediate.unittesting.repository.NoteRepository;
+import com.lig.intermediate.unittesting.ui.note.NoteActivity;
 
 import javax.inject.Inject;
 
@@ -26,8 +28,10 @@ public class NotesListActivity extends DaggerAppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes_list);
 
-        Log.d(TAG, "on create :" + guopengString);
-        Log.d(TAG, "on create :" + noteRepository);
+        //Log.d(TAG, "on create :" + guopengString);
+        //Log.d(TAG, "on create :" + noteRepository);
+        Intent intent = new Intent(this, NoteActivity.class);
+        startActivity(intent);
 
     }
 }

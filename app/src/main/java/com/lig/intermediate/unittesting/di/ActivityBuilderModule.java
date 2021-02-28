@@ -1,6 +1,6 @@
 package com.lig.intermediate.unittesting.di;
 
-import com.lig.intermediate.unittesting.NoteActivity;
+import com.lig.intermediate.unittesting.ui.note.NoteActivity;
 import com.lig.intermediate.unittesting.ui.noteslist.NotesListActivity;
 
 import dagger.Module;

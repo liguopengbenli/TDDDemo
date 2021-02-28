@@ -3,7 +3,7 @@ package com.lig.intermediate.unittesting.util;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-class DateUtil {
+public class DateUtil {
 
     private static final String TAG = "Utility";
 
