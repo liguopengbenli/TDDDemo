@@ -173,8 +173,6 @@ public class NoteRepositoryTest {
         assertEquals(Resource.error(null, UPDATE_FAILURE), returnedValue);
     }
 
-
-
       /*
         update note
         null title

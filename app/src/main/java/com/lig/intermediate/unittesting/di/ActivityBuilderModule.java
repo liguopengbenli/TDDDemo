@@ -1,5 +1,6 @@
 package com.lig.intermediate.unittesting.di;
 
+import com.lig.intermediate.unittesting.NoteActivity;
 import com.lig.intermediate.unittesting.ui.noteslist.NotesListActivity;
 
 import dagger.Module;
@@ -15,6 +16,8 @@ public abstract class ActivityBuilderModule {
     @ContributesAndroidInjector // we can add local scope module here
     abstract NotesListActivity contributeNotesListActivity(); // This is declare as subComponent
 
+    @ContributesAndroidInjector
+    abstract NoteActivity contributeNotesActivity();
 
     /*
        we can add here but keep organized we add in AppModule
