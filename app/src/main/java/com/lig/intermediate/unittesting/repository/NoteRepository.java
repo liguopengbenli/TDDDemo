@@ -1,11 +1,15 @@
 package com.lig.intermediate.unittesting.repository;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.LiveDataReactiveStreams;
 
 import com.lig.intermediate.unittesting.model.Note;
 import com.lig.intermediate.unittesting.persistence.NoteDao;
 import com.lig.intermediate.unittesting.ui.Resource;
 
+import java.util.List;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
@@ -102,5 +106,38 @@ public class NoteRepository {
         // when this throw exception function parent will throw exception too
     }
 
+    public LiveData<Resource<Integer>> deleteNote(final Note note) throws Exception{
+        checkId(note);
+        return LiveDataReactiveStreams.fromPublisher(
+                noteDao.deleteNote(note)
+                .onErrorReturn(new Function<Throwable, Integer>() {
+                    @Override
+                    public Integer apply(Throwable throwable) throws Exception {
+                        return -1;
+                    }
+                })
+                .map(new Function<Integer, Resource<Integer>>() {
+                    @Override
+                    public Resource<Integer> apply(Integer integer) throws Exception {
+
+                        if(integer > 0){
+                            return Resource.success(integer, DELETE_SUCCESS);
+                        }
+                        return Resource.error(null, DELETE_FAILURE);
+                    }
+                }).subscribeOn(Schedulers.io())
+                .toFlowable()
+        );
+    }
+
+    private void checkId(Note note) throws Exception{
+        if(note.getId()<0){
+            throw new Exception(INVALID_NOTE_ID);
+        }
+    }
+
+    public LiveData<List<Note>> getNotes(){
+        return noteDao.getNotes();
+    }
 
 }
