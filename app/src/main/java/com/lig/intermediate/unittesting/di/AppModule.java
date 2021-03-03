@@ -8,6 +8,7 @@ import com.lig.intermediate.unittesting.persistence.NoteDao;
 import com.lig.intermediate.unittesting.persistence.NoteDatabase;
 import com.lig.intermediate.unittesting.repository.NoteRepository;
 
+import javax.inject.Named;
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -52,7 +53,14 @@ public class AppModule {
 
     //------------------ Simple exemples-------------------------//
     @Provides
+    @Named("test1")
     static  String example1(){
+        return "guopeng inject a test1 string";
+    }
+
+    @Provides
+    @Named("test2")
+    static  String example2(){
         return "guopeng inject a test2 string";
     }
 
@@ -62,7 +70,7 @@ public class AppModule {
     }
 
     @Provides
-    static boolean example2(String string){
+    static boolean example3(String string){
         return string.equals("guopeng inject a test2 string"); // it will return true because this string is as dependency inside the module
     }
 
