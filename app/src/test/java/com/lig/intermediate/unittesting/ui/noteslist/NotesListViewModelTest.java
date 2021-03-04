@@ -104,7 +104,6 @@ class NotesListViewModelTest {
         // Act
         Resource<Integer> observedValue = liveDataTestUtil.getValue(viewModel.deleteNote(deletedNote));
 
-
         // Assert
         assertEquals(returnedData, observedValue);
     }
